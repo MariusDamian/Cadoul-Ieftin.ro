@@ -21,7 +21,7 @@ const Home = () => {
                                    <p className="font-semibold">Cauți cadoul perfect?</p>
                                    <p className="lg:text-4xl  text-xl lg:mt-5 text-gray-800">Hai să îl găsim împreună!</p>
                                    <Link smooth to="#categorii">
-                                        <button className="lg:text-2xl text-xs bg-rose-600 text-white lg:px-4 px-3  py-1 lg:py-2 rounded-lg hover:bg-rose-800">Începe acum!</button>
+                                        <button className="lg:text-2xl text-xs bg-rose-600 text-white lg:px-4 px-3  py-1 lg:py-2 rounded-lg hover:bg-rose-800">Începe</button>
                                    </Link>
                               </div>
                               <div className="w-1/2">
