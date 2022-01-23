@@ -1,0 +1,42 @@
+[
+     {
+          "nume": "Parfumuri",
+          "poza": "parfumuri2.png",
+          "link": "parfumuri"
+     },
+     {
+          "nume": "Ceasuri",
+          "poza": "ceasuri3.png",
+          "link": "ceasuri"
+     },
+     {
+          "nume": "Home Deco",
+          "poza": "casa.png",
+          "link": "casa"
+     },
+     {
+          "nume": "Travel & City Break",
+          "poza": "travel.png",
+          "link": "travel"
+     },
+     {
+          "nume": "Ingrijire Personala",
+          "poza": "ingrijire.png",
+          "link": "ingrijire"
+     },
+     {
+          "nume": "Activitati",
+          "poza": "active.png",
+          "link": "active"
+     },
+     {
+          "nume": "Gadgets",
+          "poza": "gadgets.png",
+          "link": "gadgets"
+     },
+     {
+          "nume": "Jucarii",
+          "poza": "jucarii.png",
+          "link": "jucarii"
+     }
+]
