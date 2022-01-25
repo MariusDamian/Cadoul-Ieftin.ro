@@ -1,0 +1,1 @@
+export const preturi = [50, 75, 100, 200, 300];

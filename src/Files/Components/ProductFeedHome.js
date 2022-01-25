@@ -1,7 +1,7 @@
 import React from "react";
-import produse from "../produse.json";
+import produse from "../Util/produse.json";
 import { HashLink as Link } from "react-router-hash-link";
-import { cadouContext } from "../Util";
+import { cadouContext } from "../Util/Context";
 import { useContext } from "react";
 
 function ProductFeedHome(props) {

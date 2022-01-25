@@ -1,5 +1,5 @@
 import React from "react";
-import categorii from "../categorii.json";
+import categorii from "../Util/categorii.json";
 import { HashLink as Link } from "react-router-hash-link";
 
 function CategoriesMap() {

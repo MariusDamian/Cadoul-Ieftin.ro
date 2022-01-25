@@ -1,22 +1,22 @@
 import React from "react";
-import produse from "./produse.json";
-import categorii from "./categorii.json";
-import GoToTop from "./GoToTop";
+import produse from "../Util/produse.json";
+import categorii from "../Util/categorii.json";
+import GoToTop from "../Util/GoToTop";
 import { HashLink as Link } from "react-router-hash-link";
 import { useState, useContext } from "react";
 import { useParams } from "react-router-dom";
 import { FaArrowAltCircleUp } from "react-icons/fa";
 import { FcCheckmark } from "react-icons/fc";
 import { Helmet } from "react-helmet";
-import { cadouContext } from "./Util";
+import { cadouContext } from "../Util/Context";
+import FiltrePreturi from "../Components/FiltrePreturi";
+import SEO from "../Util/SEO";
 
 function ProductList() {
      const { title } = useParams();
      let filtered = [];
      produse.filter((produs) => produs.category.toLowerCase().includes(title)).map((prodCat) => filtered.push(prodCat.subcategory));
      filtered = filtered.filter((item, index) => filtered.indexOf(item) === index);
-
-     let preturi = [50, 75, 100, 200, 300];
 
      // Identify category for header title
      let categorie = categorii.filter((category) => category.link === title);
@@ -34,12 +34,10 @@ function ProductList() {
                behavior: "smooth",
           });
      }
+
      return (
           <div className="h-auto bg-white">
-               <Helmet>
-                    <title>{categorie[0].nume} | Cadouri ieftine - alege cadoul perfect</title>
-                    <meta name="description" content={`Cauti cadoul pefect si ieftin? Alege din colectia noastra speciala de ${categorie[0].nume}`} />
-               </Helmet>
+               <SEO title={`${categorie[0].nume} | Cadouri ieftine - alege cadoul perfect`} description={`Cauti cadoul pefect si ieftin? Alege din colectia noastra speciala de ${categorie[0].nume}`} />
                <div className="h-40 w-full mt-16 bg-center" style={{ backgroundImage: `url('/images/${categorie[0].link}Hero.png')` }}>
                     <div className="max-w-7xl w-full  mx-auto h-full flex flex-col justify-end space-y-3 pb-2 px-5 lg:px-0">
                          <p className="text-xl underline underline-offset-2">{categorie[0].nume}</p>
@@ -52,22 +50,7 @@ function ProductList() {
                <div className="max-w-7xl mx-auto text-black font-medium">
                     <div className="flex flex-row">
                          <div className="min-w-[230px] hidden lg:flex flex-col items-center pt-5 justify-start overflow-y-auto overflow-hidden">
-                              {/*  Filtre Preturi */}
-                              <div className="w-full bg-stone-100 p-2 rounded-xl">
-                                   <p className="text-left w-full font-semibold mb-3">Preturi</p>
-                                   {preturi.map((qwe) => (
-                                        <div className="flex flex-row justify-between w-full">
-                                             <button className="text-left w-full" onClick={() => setPret(qwe)}>
-                                                  Cadouri sub {qwe} lei
-                                             </button>
-                                             {qwe === pret ? <FcCheckmark className="text-xl" /> : null}
-                                        </div>
-                                   ))}
-                                   <button className="text-left w-full" onClick={() => setPret(10000)}>
-                                        Toate produsele
-                                   </button>
-                              </div>
-                              {/*  Filtre Preturi */}
+                              <FiltrePreturi />
                               {/*  Filtre Subacategorii */}
                               <div className="w-full bg-stone-100 p-2 rounded-xl mt-6">
                                    <p className="text-left w-full font-semibold mb-3">Categorii</p>
@@ -85,8 +68,8 @@ function ProductList() {
                                         Toate produsele
                                    </button>
                               </div>
+                              {/*  Filtre Subacategorii */}
                          </div>
-                         {/*  Filtre Subacategorii */}
                          <div className="flex flex-row flex-wrap">
                               {produse
                                    .filter((produs, index) => produs?.category?.toLowerCase().includes(title))

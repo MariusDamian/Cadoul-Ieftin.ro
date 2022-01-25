@@ -3,7 +3,7 @@ import { AiFillCloseCircle } from "react-icons/ai";
 import { FcSearch } from "react-icons/fc";
 import { BiSearchAlt } from "react-icons/bi";
 import { HashLink as Link } from "react-router-hash-link";
-import produse from "./produse.json";
+import produse from "../Util/produse.json";
 
 function SearchBar() {
      const [filteredData, setFilteredData] = useState([]);
